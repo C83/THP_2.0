@@ -31,7 +31,7 @@ group :development, :test do
 
   # Custom 
   gem "factory_bot_rails", "~> 4.0"
-  gem install faker
+  gem 'faker'
 end
 
 group :development do
