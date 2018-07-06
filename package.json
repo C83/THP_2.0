@@ -3,7 +3,7 @@
     "husky": "^0.14.3"
   },
   "scripts": {
-    "precommit": "rubocop -a && annotate",
-    "prepush": "rubocop -a && rpsec && annotate"  
+    "precommit": "rubocop && annotate",
+    "prepush": "rubocop && rpsec && annotate"  
   }
 }
