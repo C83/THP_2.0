@@ -4,6 +4,6 @@
   },
   "scripts": {
     "precommit": "rubocop && annotate",
-    "prepush": "rubocop && rpsec && annotate"  
+    "prepush": "rubocop && rspec && annotate"  
   }
 }
