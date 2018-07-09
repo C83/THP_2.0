@@ -35,4 +35,11 @@ RSpec.describe Lesson, type: :model do
   it "is invalid with so long description" do
     expect(build(:lesson, description: Faker::Lorem.characters(301))).to be_invalid
   end
+
+  # With shoulda
+  # Same result that "is invalid without title"
+  it { should validate_presence_of(:title) }
+
+  # Same result that "is invalid with so long description"
+  it { should validate_length_of(:description).is_at_most(300) }
 end
