@@ -13,7 +13,7 @@ require 'faker'
 
 FactoryBot.define do
   factory :lesson do
-    title Faker::Hacker.noun
-    description Faker::ChuckNorris.fact
+    title Faker::Hacker.noun.first(50)
+    description Faker::ChuckNorris.fact.first(300)
   end
 end
