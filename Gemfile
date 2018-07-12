@@ -54,3 +54,6 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 # Gem for rubocop
 gem "relaxed-rubocop"
 gem 'rubocop', '~> 0.57.2', require: false
+
+# Serializer
+gem 'active_model_serializers', '~> 0.10.0'
