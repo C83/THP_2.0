@@ -19,7 +19,7 @@ class LessonsController < ApplicationController
   end
 
   def update
-    @this_lesson.update(lesson_params)
+    @this_lesson.update!(lesson_params)
     render json: @this_lesson, status: :ok
   end
 
