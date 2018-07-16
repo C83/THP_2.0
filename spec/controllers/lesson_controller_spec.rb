@@ -73,22 +73,38 @@ RSpec.describe LessonsController, type: :controller do
     end
 
     context 'with invalid params' do
-      before{ lesson_params[:title] = '' }
       it 'returns status 403 without title' do
+        lesson_params[:title] = ''
         subject
         expect(response.code).to eq("403")
       end
       it 'doesn\'t create new lesson' do
+        lesson_params[:title] = ''
         expect{ subject }.to change { Lesson.count }.by(0)
+      end
+      it 'returns status 403 with title so long' do
+        lesson_params[:title] = Faker::Lorem.characters(51)
+        subject
+        expect(response.code).to eq("403")
+      end
+      it 'returns status 403 with description so long' do
+        lesson_params[:description] = Faker::Lorem.characters(301)
+        subject
+        expect(response.code).to eq("403")
+      end
+      it 'returns status 403 with no title' do
+        lesson_params[:title] = ''
+        subject
+        expect(response.code).to eq("403")
       end
     end
   end
 
   describe 'POST #update' do
     let(:lesson) { FactoryBot.create(:lesson, title: 'Arthus') }
-    let(:new_title){ 'Harry' }
+    let(:new_params){ FactoryBot.attributes_for(:lesson).merge(title: 'Harry') }
 
-    subject{ post :update, params: { id: lesson.id, lesson: { title: new_title } } }
+    subject{ post :update, params: { id: lesson.id, lesson: new_params } }
 
     context 'with valid params' do
       before{ subject }
@@ -96,15 +112,30 @@ RSpec.describe LessonsController, type: :controller do
         expect(response.code).to eq("200")
       end
       it 'changes the title' do
-        expect(json_response[:title]).to eq(new_title)
+        expect(json_response[:title]).to eq(new_params[:title])
       end
     end
 
     context 'with invalid params' do
-      let(:new_title){ '' }
-      it 'returns status 403' do
+      it 'returns status 403 without title' do
+        new_params[:title] = ''
         subject
-        expect(response.code).to eq('403')
+        expect(response.code).to eq("403")
+      end
+      it 'returns status 403 with title so long' do
+        new_params[:title] = Faker::Lorem.characters(51)
+        subject
+        expect(response.code).to eq("403")
+      end
+      it 'returns status 403 with description so long' do
+        new_params[:description] = Faker::Lorem.characters(301)
+        subject
+        expect(response.code).to eq("403")
+      end
+      it 'returns status 403 with no title' do
+        new_params[:title] = ''
+        subject
+        expect(response.code).to eq("403")
       end
     end
   end
