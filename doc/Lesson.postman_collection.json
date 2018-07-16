@@ -1,0 +1,1275 @@
+{
+	"info": {
+		"_postman_id": "8e4f36ec-7d3b-441f-8796-1b37ffe0f3d8",
+		"name": "Lesson",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Index",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/lessons",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"lessons"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "b83eb615-0a7e-4968-acc1-45ac38011549",
+					"name": "Index (good)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{url}}/lessons",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"lessons"
+							]
+						}
+					},
+					"status": "OK ",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "max-age=0, private, must-revalidate",
+							"name": "Cache-Control",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "733",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Jul 2018 16:53:43 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"ce93205b2587308a8fa894b4aa3182ac\"",
+							"name": "Etag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "Server",
+							"value": "WEBrick/1.4.2 (Ruby/2.5.1/2018-03-29)",
+							"name": "Server",
+							"description": "A name for the server"
+						},
+						{
+							"key": "X-Request-Id",
+							"value": "9c5bbc9e-970d-4c7b-bc49-5e0c5d898f30",
+							"name": "X-Request-Id",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Runtime",
+							"value": "0.004931",
+							"name": "X-Runtime",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [],
+					"body": "[{\"id\":\"3a59d6b5-c64e-4c6e-b8e1-fff9e5ffed14\",\"title\":\"my title\",\"description\":\"my description\",\"created_at\":\"2018-07-16T13:44:30.114Z\"},{\"id\":\"4c1d4fb7-fac3-4c9a-931a-892cca59a03f\",\"title\":\"my second title\",\"description\":\"my second description\",\"created_at\":\"2018-07-16T16:51:44.545Z\"},{\"id\":\"987b4dd9-369d-4612-b53c-c19e3283953b\",\"title\":\"my third title\",\"description\":\"my third description\",\"created_at\":\"2018-07-16T16:52:14.007Z\"},{\"id\":\"e4340e61-18f6-4916-a190-55255e7c72d6\",\"title\":\"my fourth title\",\"description\":\"my fourth description\",\"created_at\":\"2018-07-16T16:52:43.753Z\"},{\"id\":\"80b1d776-7279-46c3-96b1-2f072ad19913\",\"title\":\"my fifth title\",\"description\":\"my fifth description\",\"created_at\":\"2018-07-16T16:53:02.334Z\"}]"
+				}
+			]
+		},
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"lesson\": {\n    \"title\": \"my third title\",\n    \"description\": \"my third description\"\n  }\n}"
+				},
+				"url": {
+					"raw": "{{url}}/lessons",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"lessons"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "0fd3f7b1-7bc8-45a8-abba-aef26992554d",
+					"name": "Create (bad : no params)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/lessons",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"lessons"
+							]
+						}
+					},
+					"status": "Forbidden ",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "no-cache",
+							"name": "Cache-Control",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "48",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Jul 2018 16:59:03 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Server",
+							"value": "WEBrick/1.4.2 (Ruby/2.5.1/2018-03-29)",
+							"name": "Server",
+							"description": "A name for the server"
+						},
+						{
+							"key": "X-Request-Id",
+							"value": "84105ed1-f70a-4358-ae0d-d2f53befa2e3",
+							"name": "X-Request-Id",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Runtime",
+							"value": "0.028316",
+							"name": "X-Runtime",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [],
+					"body": "\"param is missing or the value is empty: lesson\""
+				},
+				{
+					"id": "e30be2be-f03e-4f44-beb0-5a31d818adaf",
+					"name": "Create (good)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"lesson\": {\n    \"title\": \"my sixth title\",\n    \"description\": \"my sixth description\"\n  }\n}"
+						},
+						"url": {
+							"raw": "{{url}}/lessons",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"lessons"
+							]
+						}
+					},
+					"status": "Created ",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "max-age=0, private, must-revalidate",
+							"name": "Cache-Control",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "147",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Jul 2018 16:55:11 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"e8a07443d8d8d84b56cb8b0eca79f292\"",
+							"name": "Etag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "Server",
+							"value": "WEBrick/1.4.2 (Ruby/2.5.1/2018-03-29)",
+							"name": "Server",
+							"description": "A name for the server"
+						},
+						{
+							"key": "X-Request-Id",
+							"value": "61977fab-58e4-4b1e-bc6f-420966887a46",
+							"name": "X-Request-Id",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Runtime",
+							"value": "0.007309",
+							"name": "X-Runtime",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [],
+					"body": "{\"id\":\"2e4a143d-dbe4-4524-8771-66a8b01c9a81\",\"title\":\"my sixth title\",\"description\":\"my sixth description\",\"created_at\":\"2018-07-16T16:55:11.500Z\"}"
+				},
+				{
+					"id": "69dc44c0-5323-4b55-a13d-6324d3596737",
+					"name": "Create (bad : no title)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"lesson\": {\n    \"title\": \"\",\n    \"description\": \"my seventh description\"\n  }\n}"
+						},
+						"url": {
+							"raw": "{{url}}/lessons",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"lessons"
+							]
+						}
+					},
+					"status": "Forbidden ",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "no-cache",
+							"name": "Cache-Control",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "86",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Jul 2018 16:58:14 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Server",
+							"value": "WEBrick/1.4.2 (Ruby/2.5.1/2018-03-29)",
+							"name": "Server",
+							"description": "A name for the server"
+						},
+						{
+							"key": "X-Request-Id",
+							"value": "086117b2-aaa9-4201-b952-83f28302606c",
+							"name": "X-Request-Id",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Runtime",
+							"value": "0.038457",
+							"name": "X-Runtime",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [],
+					"body": "\"Validation failed: Title can't be blank, Title is too short (minimum is 1 character)\""
+				},
+				{
+					"id": "d2da0f8e-99bb-46b6-b115-e65948cff835",
+					"name": "Create (good without description)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"lesson\": {\n    \"title\": \"my sixth title\",\n    \"description\": \"\"\n  }\n}"
+						},
+						"url": {
+							"raw": "{{url}}/lessons",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"lessons"
+							]
+						}
+					},
+					"status": "Created ",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "max-age=0, private, must-revalidate",
+							"name": "Cache-Control",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "127",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Jul 2018 17:00:29 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"430e3d082a272893613394402efcdb89\"",
+							"name": "Etag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "Server",
+							"value": "WEBrick/1.4.2 (Ruby/2.5.1/2018-03-29)",
+							"name": "Server",
+							"description": "A name for the server"
+						},
+						{
+							"key": "X-Request-Id",
+							"value": "1d2f15cc-ab6e-492e-8f3c-ec012c6d5e81",
+							"name": "X-Request-Id",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Runtime",
+							"value": "0.015676",
+							"name": "X-Runtime",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [],
+					"body": "{\"id\":\"7df643b4-ca5e-456c-8a44-9f3d907e8512\",\"title\":\"my sixth title\",\"description\":\"\",\"created_at\":\"2018-07-16T17:00:29.131Z\"}"
+				}
+			]
+		},
+		{
+			"name": "Show",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{url}}/lessons/1111",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"lessons",
+						"1111"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "19119d72-a406-46b2-ac35-97566a0438d5",
+					"name": "Show (bad : id doesn't exist)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{url}}/lessons/1111",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"lessons",
+								"1111"
+							]
+						}
+					},
+					"status": "Not Found ",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "no-cache",
+							"name": "Cache-Control",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "22",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Jul 2018 17:04:23 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Server",
+							"value": "WEBrick/1.4.2 (Ruby/2.5.1/2018-03-29)",
+							"name": "Server",
+							"description": "A name for the server"
+						},
+						{
+							"key": "X-Request-Id",
+							"value": "b0c8dc06-7618-4571-af12-f6f2218a405b",
+							"name": "X-Request-Id",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Runtime",
+							"value": "0.006262",
+							"name": "X-Runtime",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [],
+					"body": "\"Couldn't find Lesson\""
+				},
+				{
+					"id": "54788717-960d-453d-81f8-88534e7edaca",
+					"name": "Show (good)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{url}}/lessons/7df643b4-ca5e-456c-8a44-9f3d907e8512",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"lessons",
+								"7df643b4-ca5e-456c-8a44-9f3d907e8512"
+							]
+						}
+					},
+					"status": "OK ",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "max-age=0, private, must-revalidate",
+							"name": "Cache-Control",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "127",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Jul 2018 17:02:38 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"430e3d082a272893613394402efcdb89\"",
+							"name": "Etag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "Server",
+							"value": "WEBrick/1.4.2 (Ruby/2.5.1/2018-03-29)",
+							"name": "Server",
+							"description": "A name for the server"
+						},
+						{
+							"key": "X-Request-Id",
+							"value": "1a487915-f6d7-4195-9abd-9694ffb9f41c",
+							"name": "X-Request-Id",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Runtime",
+							"value": "0.018877",
+							"name": "X-Runtime",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [],
+					"body": "{\"id\":\"7df643b4-ca5e-456c-8a44-9f3d907e8512\",\"title\":\"my sixth title\",\"description\":\"\",\"created_at\":\"2018-07-16T17:00:29.131Z\"}"
+				}
+			]
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"lesson\": {\n\t\"title\": \"\"\n  }\n}"
+				},
+				"url": {
+					"raw": "{{url}}/lessons/7df643b4-ca5e-456c-8a44-9f3d907e8512",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"lessons",
+						"7df643b4-ca5e-456c-8a44-9f3d907e8512"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "e6ccc249-9066-4f2e-b174-a74eab17247c",
+					"name": "Update (bad : no title)",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"lesson\": {\n\t\"title\": \"\"\n  }\n}"
+						},
+						"url": {
+							"raw": "{{url}}/lessons/7df643b4-ca5e-456c-8a44-9f3d907e8512",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"lessons",
+								"7df643b4-ca5e-456c-8a44-9f3d907e8512"
+							]
+						}
+					},
+					"status": "Forbidden ",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "no-cache",
+							"name": "Cache-Control",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "86",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Jul 2018 17:17:05 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Server",
+							"value": "WEBrick/1.4.2 (Ruby/2.5.1/2018-03-29)",
+							"name": "Server",
+							"description": "A name for the server"
+						},
+						{
+							"key": "X-Request-Id",
+							"value": "56c978b6-3703-4a17-81c3-d043b0d31e24",
+							"name": "X-Request-Id",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Runtime",
+							"value": "0.009335",
+							"name": "X-Runtime",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [],
+					"body": "\"Validation failed: Title can't be blank, Title is too short (minimum is 1 character)\""
+				},
+				{
+					"id": "641915d0-edff-40ff-9796-35ee7e8c51f6",
+					"name": "Update (good)",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"lesson\": {\n    \"title\": \"my new title\",\n    \"description\": \"my description\"\n  }\n}"
+						},
+						"url": {
+							"raw": "{{url}}/lessons/7df643b4-ca5e-456c-8a44-9f3d907e8512",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"lessons",
+								"7df643b4-ca5e-456c-8a44-9f3d907e8512"
+							]
+						}
+					},
+					"status": "OK ",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "max-age=0, private, must-revalidate",
+							"name": "Cache-Control",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "139",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Jul 2018 17:08:07 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"9a85751b67687df52fc5d8c0de535520\"",
+							"name": "Etag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "Server",
+							"value": "WEBrick/1.4.2 (Ruby/2.5.1/2018-03-29)",
+							"name": "Server",
+							"description": "A name for the server"
+						},
+						{
+							"key": "X-Request-Id",
+							"value": "1d678a53-0616-4c28-b68f-434b7411a4af",
+							"name": "X-Request-Id",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Runtime",
+							"value": "0.013635",
+							"name": "X-Runtime",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [],
+					"body": "{\"id\":\"7df643b4-ca5e-456c-8a44-9f3d907e8512\",\"title\":\"my new title\",\"description\":\"my description\",\"created_at\":\"2018-07-16T17:00:29.131Z\"}"
+				},
+				{
+					"id": "41c5ebfb-8d12-45f0-bb52-03571be87d5d",
+					"name": "Update (bad : no params)",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n}"
+						},
+						"url": {
+							"raw": "{{url}}/lessons/7df643b4-ca5e-456c-8a44-9f3d907e8512",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"lessons",
+								"7df643b4-ca5e-456c-8a44-9f3d907e8512"
+							]
+						}
+					},
+					"status": "Forbidden ",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "no-cache",
+							"name": "Cache-Control",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "48",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Jul 2018 17:15:51 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Server",
+							"value": "WEBrick/1.4.2 (Ruby/2.5.1/2018-03-29)",
+							"name": "Server",
+							"description": "A name for the server"
+						},
+						{
+							"key": "X-Request-Id",
+							"value": "9ea291aa-b9be-489e-8f2b-cca2a0104c80",
+							"name": "X-Request-Id",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Runtime",
+							"value": "0.014590",
+							"name": "X-Runtime",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [],
+					"body": "\"param is missing or the value is empty: lesson\""
+				},
+				{
+					"id": "5d69c109-a7b7-45b0-86c8-18bb20cd8a6e",
+					"name": "Update (good : just title)",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"lesson\": {\n    \"title\": \"my new title\",\n    \"description\": \"\"\n  }\n}"
+						},
+						"url": {
+							"raw": "{{url}}/lessons/7df643b4-ca5e-456c-8a44-9f3d907e8512",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"lessons",
+								"7df643b4-ca5e-456c-8a44-9f3d907e8512"
+							]
+						}
+					},
+					"status": "OK ",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "max-age=0, private, must-revalidate",
+							"name": "Cache-Control",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "125",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Jul 2018 17:08:44 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"16b933a456fb46725429ac399b54f658\"",
+							"name": "Etag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "Server",
+							"value": "WEBrick/1.4.2 (Ruby/2.5.1/2018-03-29)",
+							"name": "Server",
+							"description": "A name for the server"
+						},
+						{
+							"key": "X-Request-Id",
+							"value": "1d6b74e9-8364-4aa6-8ecf-ff875342c5a6",
+							"name": "X-Request-Id",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Runtime",
+							"value": "0.012566",
+							"name": "X-Runtime",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [],
+					"body": "{\"id\":\"7df643b4-ca5e-456c-8a44-9f3d907e8512\",\"title\":\"my new title\",\"description\":\"\",\"created_at\":\"2018-07-16T17:00:29.131Z\"}"
+				},
+				{
+					"id": "97fbfc28-1f75-4e68-92ad-cf9d24b26262",
+					"name": "Update (good : just description)",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"lesson\": {\n\t\"description\": \"a other description\"\n  }\n}"
+						},
+						"url": {
+							"raw": "{{url}}/lessons/7df643b4-ca5e-456c-8a44-9f3d907e8512",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"lessons",
+								"7df643b4-ca5e-456c-8a44-9f3d907e8512"
+							]
+						}
+					},
+					"status": "OK ",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "max-age=0, private, must-revalidate",
+							"name": "Cache-Control",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "147",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Jul 2018 17:11:47 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"5e54b12d97fa5f5f4a43ff803f0b2753\"",
+							"name": "Etag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "Server",
+							"value": "WEBrick/1.4.2 (Ruby/2.5.1/2018-03-29)",
+							"name": "Server",
+							"description": "A name for the server"
+						},
+						{
+							"key": "X-Request-Id",
+							"value": "7292f410-ec9a-4ab8-b7da-6e6bb5cdbb90",
+							"name": "X-Request-Id",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Runtime",
+							"value": "0.020537",
+							"name": "X-Runtime",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [],
+					"body": "{\"id\":\"7df643b4-ca5e-456c-8a44-9f3d907e8512\",\"title\":\"the sixth title\",\"description\":\"a other description\",\"created_at\":\"2018-07-16T17:00:29.131Z\"}"
+				}
+			]
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3000/lessons/c87f7ec6-269f-4e10-a19b-f8ff62c867d0",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"lessons",
+						"c87f7ec6-269f-4e10-a19b-f8ff62c867d0"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "d2db08ef-9f9b-4e58-b3f7-f2f2544b7cc9",
+					"name": "Delete (bad : id doesn't exist)",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{url}}/lessons/1111",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"lessons",
+								"1111"
+							]
+						}
+					},
+					"status": "Not Found ",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "no-cache",
+							"name": "Cache-Control",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "22",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Jul 2018 17:27:04 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Server",
+							"value": "WEBrick/1.4.2 (Ruby/2.5.1/2018-03-29)",
+							"name": "Server",
+							"description": "A name for the server"
+						},
+						{
+							"key": "X-Request-Id",
+							"value": "185bfa83-99e4-46f6-b19f-98d74b383d37",
+							"name": "X-Request-Id",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Runtime",
+							"value": "0.006365",
+							"name": "X-Runtime",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [],
+					"body": "\"Couldn't find Lesson\""
+				},
+				{
+					"id": "76d583a5-ef7e-4019-aa65-b39539f12be4",
+					"name": "Delete (good)",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{url}}/lessons/7df643b4-ca5e-456c-8a44-9f3d907e8512",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"lessons",
+								"7df643b4-ca5e-456c-8a44-9f3d907e8512"
+							]
+						}
+					},
+					"status": "No Content ",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "no-cache",
+							"name": "Cache-Control",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Jul 2018 17:26:45 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Server",
+							"value": "WEBrick/1.4.2 (Ruby/2.5.1/2018-03-29)",
+							"name": "Server",
+							"description": "A name for the server"
+						},
+						{
+							"key": "X-Request-Id",
+							"value": "75035a79-8b18-4ecd-9ac0-fc35031bc6b3",
+							"name": "X-Request-Id",
+							"description": "Custom header"
+						},
+						{
+							"key": "X-Runtime",
+							"value": "0.017880",
+							"name": "X-Runtime",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"id": "685fa81e-8f51-4b9e-b24d-b67c55cb7e30",
+			"key": "adress",
+			"value": "localhost:3000",
+			"type": "string",
+			"description": ""
+		}
+	]
+}
