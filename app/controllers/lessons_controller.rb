@@ -1,7 +1,4 @@
 class LessonsController < ApplicationController
-  rescue_from ActiveRecord::RecordInvalid, ActionController::ParameterMissing, with: :show_errors_403
-  rescue_from ActiveRecord::RecordNotFound, with: :show_errors_404
-
   before_action :set_lesson, only: %i[show update destroy]
 
   def index
@@ -36,13 +33,5 @@ class LessonsController < ApplicationController
 
   def lesson_params
     params.require(:lesson).permit(:title, :description)
-  end
-
-  def show_errors_403(exception)
-    render json: exception, status: :forbidden
-  end
-
-  def show_errors_404(exception)
-    render json: exception, status: :not_found
   end
 end
