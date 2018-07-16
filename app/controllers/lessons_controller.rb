@@ -22,7 +22,7 @@ class LessonsController < ApplicationController
 
   def destroy
     @this_lesson.destroy
-    render status: :no_content
+    head :no_content, status: :no_content
   end
 
   private
