@@ -1,12 +1,17 @@
 class ApplicationController < ActionController::API
-  rescue_from ActiveRecord::RecordInvalid, ActionController::ParameterMissing, with: :show_errors_403
-  rescue_from ActiveRecord::RecordNotFound, with: :show_errors_404
+  rescue_from ActiveRecord::RecordInvalid, with: :rescue_bad_params
+  rescue_from ActionController::ParameterMissing, with: :rescue_param_missing
+  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
-  def show_errors_403(exception)
-    render json: exception, status: :forbidden
+  def rescue_bad_params(exception)
+    render json: { error: exception.record.errors.full_messages }, status: :forbidden
   end
 
-  def show_errors_404(exception)
-    render json: exception, status: :not_found
+  def rescue_param_missing
+    render json: { errors: [exception.message] }, status: :forbidden
+  end
+
+  def record_not_found(exception)
+    render json: { errors: [exception.message] }, status: :not_found
   end
 end
