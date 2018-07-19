@@ -9,11 +9,6 @@
 #  updated_at  :datetime         not null
 #
 
-require 'faker'
-
-FactoryBot.define do
-  factory :lesson do
-    title { Faker::Hacker.noun.first(50) }
-    description { Faker::ChuckNorris.fact.first(300) }
-  end
+class LessonSerializer < ActiveModel::Serializer
+  attributes :id, :title, :description, :created_at
 end

@@ -1,5 +1,5 @@
-inherit_gem:
-  relaxed-rubocop: .rubocop.yml
+inherit_from:
+- https://relaxed.ruby.style/rubocop.yml
 
 AllCops:
   DisplayStyleGuide: true

@@ -25,15 +25,16 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 
+gem 'puma'
+
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem "factory_bot_rails", "~> 4.0"
+  gem 'faker'
+  gem 'pry-byebug'
+  gem 'rspec-rails', '~> 3.7'
 end
 
 group :test do
-  gem "factory_bot_rails", "~> 4.0"
-  gem 'faker'
-  gem 'rspec-rails', '~> 3.7'
   gem 'shoulda-matchers', '~> 3.1'
 end
 
@@ -52,5 +53,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Custom :
 # Gem for rubocop
-gem "relaxed-rubocop"
 gem 'rubocop', '~> 0.57.2', require: false
+
+# Serializer
+gem 'active_model_serializers', '~> 0.10.0'

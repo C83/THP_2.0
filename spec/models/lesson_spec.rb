@@ -17,7 +17,7 @@ RSpec.describe Lesson, type: :model do
   end
 
   it "is valid with no description" do
-    expect(build(:lesson, description: "")).to be_valid
+    expect(build(:lesson, description: nil)).to be_valid
   end
 
   it "is saved with valid attributes" do
